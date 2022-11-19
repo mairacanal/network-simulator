@@ -8,6 +8,7 @@
 #include "../utils/ColoredString.hpp"
 #include "../utils/PrintService.hpp"
 #include "../Handler.hpp"
+#include "DataLink.hpp"
 #include "Layer.hpp"
 
 class Application : public Layer {
