@@ -1,13 +1,12 @@
 #pragma once
 
-#include <vector>
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include "ColoredString.hpp"
 
-class PrintService
-{
+class PrintService {
 private:
     /**
      * @brief Compara N bits com um certo tamanho e retorna 1 caso verdadeiro.
@@ -15,7 +14,7 @@ private:
      * @param i Valor do tamanho atual.
      * @param n Tamanho a ser comparado.
      */
-    static void _compareNBits(int &i, int n) { i = (i % n == 0) ? 1 : i + 1; }
+    static void _compareNBits(int& i, int n) { i = (i % n == 0) ? 1 : i + 1; }
 
     /**
      * @brief Envia uma nova linha ao cout.
@@ -35,12 +34,13 @@ public:
      *
      * @param bits Vector de bits a ser printado
      */
-    static void printAsBytes(const std::vector<bool> &bits)
+    static void printAsBytes(const std::vector<bool>& bits)
     {
         int i = 0;
 
-        for (auto b : bits)
-        {
+        _sendNewLine();
+
+        for (auto b : bits) {
             std::cout << b;
 
             // Um espaco a cada 8 bits
@@ -53,6 +53,7 @@ public:
         }
 
         _sendNewLine();
+        _sendNewLine();
     }
 
     /**
@@ -60,14 +61,13 @@ public:
      *
      * @param bits vector de bits a ser printado
      */
-    static void printAsStream(const std::vector<bool> &bits)
+    static void printAsStream(const std::vector<bool>& bits)
     {
         int i = 1, j = 1;
 
         _sendNewLine();
 
-        for (auto bit : bits)
-        {
+        for (auto bit : bits) {
             std::cout << bit;
 
             // Um espaco a cada 8 bits
@@ -91,15 +91,14 @@ public:
      * @param og vector de bits original
      * @param comp vector de bits a ser comparado
      */
-    static void printDifference(const std::vector<bool> &og, const std::vector<bool> &comp)
+    static void printDifference(const std::vector<bool>& og, const std::vector<bool>& comp)
     {
         _sendNewLine();
 
-        for (int i = 0, j = 0; i < og.size(); i++, j++)
-        {
+        for (int i = 0, j = 0; i < og.size(); i++, j++) {
             std::cout << ((og[i] != comp[i])
-                              ? ColoredString::red(std::to_string(og[i]))
-                              : std::to_string(og[i]));
+                    ? ColoredString::red(std::to_string(og[i]))
+                    : std::to_string(og[i]));
 
             // Um espaco a cada 8 bits
             if ((j + 1) % 8 == 0)
@@ -114,14 +113,13 @@ public:
         _sendNewLine();
     }
 
-
     /**
      * @brief Mostra de maneira estilizada o texto de TCP Simulator
-    */
+     */
     static void welcomeScreen()
     {
-        char const *linew = "________________________________________________________________________________________________________________________\n";
-        char const *welcome = "████████╗░█████╗░██████╗░  ░██████╗██╗███╗░░░███╗██╗░░░██╗██╗░░░░░░█████╗░████████╗░█████╗░██████╗░\n╚══██╔══╝██╔══██╗██╔══██╗  ██╔════╝██║████╗░████║██║░░░██║██║░░░░░██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n░░░██║░░░██║░░╚═╝██████╔╝  ╚█████╗░██║██╔████╔██║██║░░░██║██║░░░░░███████║░░░██║░░░██║░░██║██████╔╝\n░░░██║░░░██║░░██╗██╔═══╝░  ░╚═══██╗██║██║╚██╔╝██║██║░░░██║██║░░░░░██╔══██║░░░██║░░░██║░░██║██╔══██╗\n░░░██║░░░╚█████╔╝██║░░░░░  ██████╔╝██║██║░╚═╝░██║╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n░░░╚═╝░░░░╚════╝░╚═╝░░░░░  ╚═════╝░╚═╝╚═╝░░░░░╚═╝░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝";
+        char const* linew = "________________________________________________________________________________________________________________________\n";
+        char const* welcome = "████████╗░█████╗░██████╗░  ░██████╗██╗███╗░░░███╗██╗░░░██╗██╗░░░░░░█████╗░████████╗░█████╗░██████╗░\n╚══██╔══╝██╔══██╗██╔══██╗  ██╔════╝██║████╗░████║██║░░░██║██║░░░░░██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n░░░██║░░░██║░░╚═╝██████╔╝  ╚█████╗░██║██╔████╔██║██║░░░██║██║░░░░░███████║░░░██║░░░██║░░██║██████╔╝\n░░░██║░░░██║░░██╗██╔═══╝░  ░╚═══██╗██║██║╚██╔╝██║██║░░░██║██║░░░░░██╔══██║░░░██║░░░██║░░██║██╔══██╗\n░░░██║░░░╚█████╔╝██║░░░░░  ██████╔╝██║██║░╚═╝░██║╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n░░░╚═╝░░░░╚════╝░╚═╝░░░░░  ╚═════╝░╚═╝╚═╝░░░░░╚═╝░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝";
         std::cout << linew << std::endl
                   << ColoredString::green(welcome) << std::endl
                   << linew << std::endl;

@@ -18,10 +18,9 @@ void DataLink::receive(std::vector<bool> frame)
 
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Binário recebido:" << std::endl;
 
-    
     PrintService::printAsBytes(frame);
 
-    std::cout << std::endl<< std::string (120, '=') << std::endl << std::endl;
+    std::cout << std::string (120, '=') << std::endl << std::endl;
     Application::receive(frame);
 
 }
@@ -65,9 +64,7 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
         1
     };i
 
-    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Polinômio:" << std::endl;
-    std::cout << std::endl;
-
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Polinômio: ";
 
     for (int i = 0; i < polinomio.size(); i++) {
 
@@ -98,9 +95,9 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
     frame = remaining;
 
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Frame e resto:" << std::endl;
-    std::cout << std::endl;
     PrintService::printAsBytes(frame);
-    std::cout << std::endl<< std::string (120, '=') << std::endl << std::endl;
+    std::cout << std::string (120, '=') << std::endl << std::endl;
+
     return frame;
 }
 
