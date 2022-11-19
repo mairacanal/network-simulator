@@ -15,13 +15,15 @@ class Application : public Layer {
 
 public:
     /**
-     * @brief Realiza a conversão da mensagem recebida para bits salvando em um bitset (ao qual utilizamos um vetor de booleano)
+     * @brief Realiza a conversão da mensagem recebida para bits salvando em
+     * std::vector<bool>, que é uma especialização do std::vector que permite
+     * trabalhar diretamente com bits.
      * @param msg Mensagem a ser convertida
      */
     static void send(const std::string& msg);
 
     /**
-     * @brief Decompoẽ o vetor de bits para mensagem
+     * @brief Transforma o vetor de bits em uma mensagem ASCII
      * @param bytes Vetor de byte à ser convertido
      */
     static void receive(const std::vector<bool>& bytes);

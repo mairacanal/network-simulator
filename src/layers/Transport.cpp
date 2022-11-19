@@ -1,11 +1,5 @@
 #include "Transport.hpp"
 
-/**
- * @brief Perturba a mensagem e cria um novo vetor.
- *
- * @param message mensagem original.
- * @return std::vector<bool> mensagem com erros.
- */
 std::vector<bool> Transport::_disturbMessageWithRandonmess(const std::vector<bool>& message)
 {
     std::vector<bool> auxilaryVec {};
@@ -16,12 +10,7 @@ std::vector<bool> Transport::_disturbMessageWithRandonmess(const std::vector<boo
     return auxilaryVec;
 }
 
-/**
- * @brief Perturba uma mensagem antes de enviar ela.
- *
- * @param message Mensagem que vai ser enviada.
- */
-void Transport::send(std::vector<bool> message)
+void Transport::send(const std::vector<bool>& message)
 {
     std::vector<bool> finalMessage {};
 

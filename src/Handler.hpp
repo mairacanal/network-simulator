@@ -11,7 +11,8 @@ class Handler {
 public:
     /**
      * @brief Gera um loop que mantém-se constantemente enquanto é
-     * responsável por receber a mensagem e passar esta adiante
+     * responsável por receber a mensagem e passar esta para a camada
+     * de Aplicação
      */
     static void input();
 

@@ -13,40 +13,39 @@
 class DataLink : public Layer {
 public:
     /**
-     * Faz o envio de um frame(bitset), utilizando algoritmos de alteracao
-     * para manutencao da consistencia nele
+     * Faz o envio de um quadro para camada de transporte, aplicando
+     * algoritmos de controle de erros no quadro
      * @param frame bitset a ser enviado
      */
     static void send(std::vector<bool> frame);
 
     /**
-     * Recebe um frame(bitset e utiliza algoritmos para checar a consistência dele
+     * Recebe um quadro e transmite esse frame para a camada de aplicação
      * @param frame bitset recebido
      */
     static void receive(std::vector<bool> frame);
 
 private:
     /**
-     * Altera o frame(bitset) para que haja manuntencao de integridade de dados
+     * Altera o quadro adicionando bits para controle de erros
      * @param frame bitset a ser manipulado
      */
     static std::vector<bool> errorHandling(std::vector<bool> frame);
 
     /**
-     * Subrotina de manutencao de integridade com paridade par
+     * Subrotina de manutencao de integridade com controle de erros com paridade par
      * @param frame bitset a ser manipulado
      */
     static std::vector<bool> evenParityControl(std::vector<bool> frame);
 
     /**
-     * Subrotina de manutencao de integridade com paridade impar
+     * Subrotina de manutencao de integridade com controle de erros com paridade impar
      * @param frame bitset a ser manipulado
      */
     static std::vector<bool> oddParityControl(std::vector<bool> frame);
 
     /**
-     * Subrotina de manutencao de integridade utilizando polinomios e o
-     * algoritmo crc32
+     * Subrotina de manutencao de integridade com o algoritmo CRC-32
      * @param frame bitset a ser manipulado
      */
     static std::vector<bool> crc32Control(std::vector<bool> frame);

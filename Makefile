@@ -3,7 +3,7 @@ CC=g++
 all:
 	$(CC) src/*.cpp src/layers/*.cpp main.cpp -o main
 
-run:
+run: all
 	./main
 
 clean:
