@@ -53,9 +53,10 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame){
                                 1};
 
     std::cout << std::endl;
-
+    bool firstTerm = true;
     for (int i = 0; i < polinomio.size(); i++) {
-        if (polinomio[i]) std::cout << "+x^" << polinomio.size() - 1 - i << " ";
+        if (polinomio[i]) if (firstTerm) std::cout << "x^" << polinomio.size() - 1 - i << " ";
+        else std::cout << "+x^" << polinomio.size() - 1 - i << " ";
     }
 
     std::cout << std::endl;
