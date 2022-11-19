@@ -3,9 +3,9 @@
 class Layer {
     public:
 
-    template <typename R, typename A>
-    static R receive(A value) = delete;
+    template <typename A>
+    static void receive(A value) = delete;
 
-    template <typename R, typename A>
-    static R send(A value) = delete;
+    template <typename A>
+    static void send(A value) = delete;
 };
