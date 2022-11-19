@@ -14,7 +14,7 @@ class ColoredString {
 public:
     static std::string red(const std::string& str)
     {
-        return std::string { "\033[1m\033[31m " + str + "\033[0m" };
+        return std::string { "\033[1m\033[31m" + str + "\033[0m" };
     }
     static std::string green(const std::string& str)
     {
