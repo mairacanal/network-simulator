@@ -1,5 +1,11 @@
 #include "Transport.hpp"
 
+/**
+ * @brief Perturba a mensagem e cria um novo vetor.
+ * 
+ * @param message mensagem original.
+ * @return std::vector<bool> mensagem com erros.
+ */
 std::vector<bool> _disturbMessageWithRandonmess(std::vector<bool> &message)
 {
     std::vector<bool> auxilaryVec;
@@ -9,6 +15,11 @@ std::vector<bool> _disturbMessageWithRandonmess(std::vector<bool> &message)
     return auxilaryVec;
 }
 
+/**
+ * @brief Perturba uma mensagem antes de enviar ela.
+ * 
+ * @param message Mensagem que vai ser enviada.
+ */
 void Transport::send(std::vector<bool> message)
 {
     std::cout << std::endl;
@@ -18,16 +29,19 @@ void Transport::send(std::vector<bool> message)
     // Mostra os bits que foram enviados
     PrintService::printAsStream(message);
 
+    // Perturba a mensagem
     std::vector<bool> finalMessage = _disturbMessageWithRandonmess(message);
 
     std::cout << ColoredString::blue("[INFO] ") << "Recebimento: " << std::endl;
     std::cout << ColoredString::blue("[INFO] ") << "Binário recebido: " << std::endl;
 
+    // Mensagem recebida com erros
     PrintService::printAsStream(finalMessage);
 
+    // Mostra a diferença 
     std::cout << ColoredString::blue("[INFO] ") << "Diferenças: " << std::endl;
 
     PrintService::printDifference(message, finalMessage);
 
-    // DataLink::receive(finalMessage);
+    DataLink::receive(finalMessage);
 }

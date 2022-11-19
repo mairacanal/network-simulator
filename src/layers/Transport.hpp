@@ -3,6 +3,8 @@
 #include <iostream>
 
 #include "Layer.hpp"
+#include "DataLink.hpp"
+
 #include "../utils/ColoredString.hpp"
 #include "../utils/PrintService.hpp"
 
