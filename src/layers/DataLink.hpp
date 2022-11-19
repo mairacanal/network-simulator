@@ -6,10 +6,9 @@
 #include "../utils/ColoredString.hpp"
 #include "../utils/PrintService.hpp"
 #include "Application.hpp"
+#include "DataCheck.hpp"
 #include "Layer.hpp"
 #include "Transport.hpp"
-
-#define HANDLING_ROUTINE 2
 
 class DataLink : public Layer {
 public:

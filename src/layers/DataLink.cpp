@@ -1,5 +1,4 @@
 #include "DataLink.hpp"
-#include "DataCheck.hpp"
 
 void DataLink::send(std::vector<bool> frame)
 {
@@ -29,6 +28,7 @@ void DataLink::receive(std::vector<bool> frame)
 std::vector<bool> DataLink::errorHandling(std::vector<bool> frame)
 {
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Iniciando tratamento de inconsistencias" << std::endl;
+
     switch (HANDLING_ROUTINE) {
     case 0:
         std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade par" << std::endl;
