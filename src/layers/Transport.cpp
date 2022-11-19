@@ -25,9 +25,8 @@ void Transport::send(std::vector<bool> message)
 {
     std::vector<bool> finalMessage {};
 
-    std::cout << std::endl;
     std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada Física de Transmissão") << std::endl;
-    std::cout << ColoredString::blue("[INFO] ") << "Binário enviado: " << std::endl;
+    std::cout << ColoredString::blue("[INFO] ") << "\t\t\t\t\tBinário enviado: " << std::endl;
 
     // Mostra os bits que foram enviados
     PrintService::printAsStream(message);

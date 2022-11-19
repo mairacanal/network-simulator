@@ -63,7 +63,6 @@ bool DataCheck::crc32Test(std::vector<bool>& frame)
     }
 
     std::cout << ColoredString::cyan("[INFO] ") + "Frame e resto:" << std::endl;
-    std::cout << std::endl;
 
     PrintService::printAsBytes(remaining);
 
@@ -74,8 +73,6 @@ bool DataCheck::crc32Test(std::vector<bool>& frame)
             hasError = remaining[remaining.size()];
         remaining.erase(remaining.end());
     }
-
-     
 
     return hasError;
 }
