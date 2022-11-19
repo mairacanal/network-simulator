@@ -70,12 +70,16 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
 
 
     for (int i = 0; i < polinomio.size(); i++) {
+
         if (polinomio[i]) {
-            if (firstTerm)
+            if (firstTerm){
                 std::cout << "x^" << polinomio.size() - 1 - i << " ";
+                firstTerm = false;
+            }
             else
                 std::cout << "+x^" << polinomio.size() - 1 - i << " ";
         }
+
     }
 
     
