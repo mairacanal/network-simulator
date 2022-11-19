@@ -6,6 +6,8 @@
 #include <vector>
 
 #include "../utils/ColoredString.hpp"
+#include "../utils/PrintService.hpp"
+#include "../Handler.hpp"
 #include "Layer.hpp"
 
 class Application : public Layer {

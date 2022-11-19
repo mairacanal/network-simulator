@@ -30,20 +30,43 @@ private:
     static void _sendSpace() { std::cout << " "; }
 
 public:
-    PrintService();
-    ~PrintService();
+
+    /**
+     * @brief Imprime um vetor de bits como um conjunto de bits
+     *
+     * @param bits Vector de bits a ser printado
+     */
+    static void printAsBytes(const std::vector<bool>& bits)
+    {
+        int i = 0;
+
+        for (auto b : bits) {
+            std::cout << b;
+
+            // Um espaco a cada 8 bits
+            if (++i % 8 == 0)
+                _sendSpace();
+
+            // Uma nova linha a cada 32 bits
+            if (i % 32 == 0)
+                _sendNewLine();
+        }
+
+        _sendNewLine();
+    }
 
     /**
      * @brief Imprime um vetor de bits como uma stream
      *
      * @param bits vector de bits a ser printado
      */
-    static void printAsStream(std::vector<bool> bits)
+    static void printAsStream(const std::vector<bool>& bits)
     {
-        _sendNewLine();
         int i = 1, j = 1;
-        for (bool bit : bits)
-        {
+
+        _sendNewLine();
+
+        for (auto bit : bits) {
             std::cout << bit;
 
             // Um espaco a cada 8 bits
