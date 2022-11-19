@@ -9,8 +9,24 @@
 class PrintService
 {
 private:
-    static void _compareNBits(int &i, int size) { i = (i % size == 0) ? 1 : i + 1; }
+    /**
+     * @brief Compara N bits com um certo tamanho e retorna 1 caso verdadeiro.
+     *
+     * @param i Valor do tamanho atual.
+     * @param n Tamanho a ser comparado.
+     */
+    static void _compareNBits(int &i, int n) { i = (i % n == 0) ? 1 : i + 1; }
+
+    /**
+     * @brief Envia uma nova linha ao cout.
+     *
+     */
     static void _sendNewLine() { std::cout << std::endl; }
+
+    /**
+     * @brief Envia um espaco ao cout.
+     *
+     */
     static void _sendSpace() { std::cout << " "; }
 
 public:
@@ -30,11 +46,12 @@ public:
         {
             std::cout << bit;
 
+            // Um espaco a cada 8 bits
             _compareNBits(j, 8);
-
             if (j == 1)
                 _sendSpace();
 
+            // Uma nova linha a cada 32 bits
             _compareNBits(i, 32);
             if (i == 1)
                 _sendNewLine();
