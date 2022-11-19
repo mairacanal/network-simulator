@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "../ColoredString.hpp"
+#include "../utils/ColoredString.hpp"
 #include "Layer.hpp"
 
 class Application : public Layer {

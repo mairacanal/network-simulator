@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-#include "ColoredString.hpp"
+#include "utils/ColoredString.hpp"
 #include "layers/Application.hpp"
 
 class Handler {
