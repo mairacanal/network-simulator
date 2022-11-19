@@ -30,17 +30,17 @@ private:
     static void _sendSpace() { std::cout << " "; }
 
 public:
-
     /**
      * @brief Imprime um vetor de bits como um conjunto de bits
      *
      * @param bits Vector de bits a ser printado
      */
-    static void printAsBytes(const std::vector<bool>& bits)
+    static void printAsBytes(const std::vector<bool> &bits)
     {
         int i = 0;
 
-        for (auto b : bits) {
+        for (auto b : bits)
+        {
             std::cout << b;
 
             // Um espaco a cada 8 bits
@@ -60,13 +60,14 @@ public:
      *
      * @param bits vector de bits a ser printado
      */
-    static void printAsStream(const std::vector<bool>& bits)
+    static void printAsStream(const std::vector<bool> &bits)
     {
         int i = 1, j = 1;
 
         _sendNewLine();
 
-        for (auto bit : bits) {
+        for (auto bit : bits)
+        {
             std::cout << bit;
 
             // Um espaco a cada 8 bits
@@ -111,5 +112,14 @@ public:
 
         _sendNewLine();
         _sendNewLine();
+    }
+
+    static void welcomeScreen()
+    {
+        char const *linew = "______________________________________________________________________________________________________\n";
+        char const *welcome = "████████╗░█████╗░██████╗░  ░██████╗██╗███╗░░░███╗██╗░░░██╗██╗░░░░░░█████╗░████████╗░█████╗░██████╗░\n╚══██╔══╝██╔══██╗██╔══██╗  ██╔════╝██║████╗░████║██║░░░██║██║░░░░░██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n░░░██║░░░██║░░╚═╝██████╔╝  ╚█████╗░██║██╔████╔██║██║░░░██║██║░░░░░███████║░░░██║░░░██║░░██║██████╔╝\n░░░██║░░░██║░░██╗██╔═══╝░  ░╚═══██╗██║██║╚██╔╝██║██║░░░██║██║░░░░░██╔══██║░░░██║░░░██║░░██║██╔══██╗\n░░░██║░░░╚█████╔╝██║░░░░░  ██████╔╝██║██║░╚═╝░██║╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n░░░╚═╝░░░░╚════╝░╚═╝░░░░░  ╚═════╝░╚═╝╚═╝░░░░░╚═╝░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝";
+        std::cout << linew << std::endl
+                  << ColoredString::green(welcome) << std::endl
+                  << linew << std::endl;
     }
 };
