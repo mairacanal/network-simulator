@@ -1,7 +1,7 @@
 #include "Handler.hpp"
 
 void Handler::input()
-{   
+{
     PrintService::welcomeScreen();
 
     std::string msg {};
@@ -14,17 +14,25 @@ void Handler::input()
             break;
         }
 
-        std::cout << std::endl << std::string (120 , '=') << std::endl << std::endl;
+        std::cout << std::endl
+                  << std::string(120, '=') << std::endl
+                  << std::endl;
 
-        std::cout  << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Mensagem Enviada: " << msg  << std::endl<< std::endl;
-        
-        std::cout << std::string (120, '=') << std::endl << std::endl;
-        
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Mensagem Enviada: " << msg << std::endl
+                  << std::endl;
+
+        std::cout << std::string(120, '=') << std::endl
+                  << std::endl;
+
         Application::send(msg);
     }
 }
 
 void Handler::output(const std::string& msg)
-{   std::cout << std::string (120, '=') << std::endl << std::endl;
-    std::cout << ColoredString::blue("[OUTPUT] ") << "Mensagem Recebida: \t\t\t\t\t" << msg << std::endl << std::endl;
+{
+    std::cout << std::endl
+              << std::string(120, '=') << std::endl
+              << std::endl;
+    std::cout << ColoredString::blue("[OUTPUT] ") << "Mensagem Recebida: " << msg << std::endl
+              << std::endl;
 }

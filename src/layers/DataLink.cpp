@@ -74,7 +74,7 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
                 firstTerm = false;
             }
             else
-                std::cout << "+x^" << polinomio.size() - 1 - i << " ";
+                std::cout << "+ x^" << polinomio.size() - 1 - i << " ";
         }
 
     }
