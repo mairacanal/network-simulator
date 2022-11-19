@@ -14,11 +14,11 @@ void Handler::input()
             break;
         }
 
-        std::cout << std::endl << std::string (msg.length() + 90 , '=') << std::endl << std::endl;
+        std::cout << std::endl << std::string (120 , '=') << std::endl << std::endl;
 
         std::cout  << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Mensagem Enviada: " << msg  << std::endl<< std::endl;
         
-        std::cout << std::string (msg.length() + 90, '=') << std::endl << std::endl;
+        std::cout << std::string (120, '=') << std::endl << std::endl;
         
         Application::send(msg);
     }

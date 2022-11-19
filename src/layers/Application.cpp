@@ -15,7 +15,7 @@ void Application::send(const std::string& msg)
     }
 
     PrintService::printAsBytes(frame);
-    std::cout << std::endl << std::string (msg.length() + 90 , '=') << std::endl << std::endl;
+    std::cout << std::endl << std::string (120 , '=') << std::endl << std::endl;
 
     DataLink::send(frame);
 }

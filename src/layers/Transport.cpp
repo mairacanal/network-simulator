@@ -45,7 +45,7 @@ void Transport::send(std::vector<bool> message)
     PrintService::printDifference(message, finalMessage);
 
     DataLink::receive(finalMessage);
-     std::cout << std::string (message.size() + 50, '=') << std::endl << std::endl;
+    std::cout << std::string (120, '=') << std::endl << std::endl;
 
 
 }

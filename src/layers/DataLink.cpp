@@ -10,7 +10,7 @@ void DataLink::send(std::vector<bool> frame)
 
 void DataLink::receive(std::vector<bool> frame)
 {   
-    std::cout << std::string (90, '=') << std::endl << std::endl;
+    std::cout << std::string (120, '=') << std::endl << std::endl;
     std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Enlace") << std::endl;
 
     if (DataCheck::errorTest(frame))
