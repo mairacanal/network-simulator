@@ -1,13 +1,16 @@
 #pragma once
-#include "Layer.hpp"
-#include "iostream"
-#include "../utils/ColoredString.hpp"
 #include <vector>
+#include <iostream>
 
+#include "Layer.hpp"
+#include "DataLink.hpp"
 
-#define ERROR_PROB 5
+#include "../utils/ColoredString.hpp"
+#include "../utils/PrintService.hpp"
 
-class Transport : public Layer{
-    public:
-        static void send(std::vector<bool> msgFrame);
+#define ERROR_PROB 10
+class Transport : public Layer
+{
+public:
+    static void send(std::vector<bool> message);
 };
