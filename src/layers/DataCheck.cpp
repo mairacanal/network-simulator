@@ -3,6 +3,7 @@
 bool DataCheck::errorTest(std::vector<bool>& frame)
 {
     std::cout << ColoredString::cyan("[INFO] ") + "Iniciando teste de integridade " << std::endl;
+
     switch (HANDLING_ROUTINE) {
     case 0:
         std::cout << ColoredString::cyan("[INFO] ") + "Com paridade par" << std::endl;
@@ -42,6 +43,7 @@ bool DataCheck::oddParityTest(std::vector<bool>& frame)
 
 bool DataCheck::crc32Test(std::vector<bool>& frame)
 {
+    std::vector<bool> remaining = frame;
     std::vector<bool> polinomio {
         1, 0, 0, 0, 0, 0, 1, 0,
         0, 1, 1, 0, 0, 0, 0, 0,
@@ -50,7 +52,6 @@ bool DataCheck::crc32Test(std::vector<bool>& frame)
         1
     };
 
-    std::vector<bool> remaining = frame;
     remaining.resize(remaining.size());
 
     for (int i = 0; i < remaining.size() - 32; i++) {

@@ -10,7 +10,6 @@ class PrintService {
 private:
     /**
      * @brief Compara N bits com um certo tamanho e retorna 1 caso verdadeiro.
-     *
      * @param i Valor do tamanho atual.
      * @param n Tamanho a ser comparado.
      */
@@ -18,20 +17,17 @@ private:
 
     /**
      * @brief Envia uma nova linha ao cout.
-     *
      */
     static void _sendNewLine() { std::cout << std::endl; }
 
     /**
      * @brief Envia um espaco ao cout.
-     *
      */
     static void _sendSpace() { std::cout << " "; }
 
 public:
     /**
      * @brief Imprime um vetor de bits como um conjunto de bits
-     *
      * @param bits Vector de bits a ser printado
      */
     static void printAsBytes(const std::vector<bool>& bits)
@@ -58,7 +54,6 @@ public:
 
     /**
      * @brief Imprime um vetor de bits como uma stream
-     *
      * @param bits vector de bits a ser printado
      */
     static void printAsStream(const std::vector<bool>& bits)
@@ -87,7 +82,6 @@ public:
 
     /**
      * @brief Compara dois vetores de bits e imprime o caractere em vermelho quando os dois forem diferentes.
-     *
      * @param og vector de bits original
      * @param comp vector de bits a ser comparado
      */

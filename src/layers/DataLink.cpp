@@ -2,15 +2,16 @@
 #include "DataCheck.hpp"
 
 void DataLink::send(std::vector<bool> frame)
-{   
+{
     std::cout << ColoredString::magenta("[LAYER]\t\t\t\t\tCamada de Enlace") << std::endl;
     frame = errorHandling(frame);
     Transport::send(frame);
 }
 
 void DataLink::receive(std::vector<bool> frame)
-{   
-    std::cout << std::string (120, '=') << std::endl << std::endl;
+{
+    std::cout << std::string(120, '=') << std::endl
+              << std::endl;
     std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Enlace") << std::endl;
 
     if (DataCheck::errorTest(frame))
@@ -20,9 +21,9 @@ void DataLink::receive(std::vector<bool> frame)
 
     PrintService::printAsBytes(frame);
 
-    std::cout << std::string (120, '=') << std::endl << std::endl;
+    std::cout << std::string(120, '=') << std::endl
+              << std::endl;
     Application::receive(frame);
-
 }
 
 std::vector<bool> DataLink::errorHandling(std::vector<bool> frame)
@@ -69,17 +70,14 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
     for (int i = 0; i < polinomio.size(); i++) {
 
         if (polinomio[i]) {
-            if (firstTerm){
+            if (firstTerm) {
                 std::cout << "x^" << polinomio.size() - 1 - i << " ";
                 firstTerm = false;
-            }
-            else
+            } else
                 std::cout << "+ x^" << polinomio.size() - 1 - i << " ";
         }
-
     }
 
-    
     std::cout << std::endl;
     std::vector<bool> remaining = frame;
     remaining.resize(remaining.size() + 32);
@@ -96,7 +94,8 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
 
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Frame e resto:" << std::endl;
     PrintService::printAsBytes(frame);
-    std::cout << std::string (120, '=') << std::endl << std::endl;
+    std::cout << std::string(120, '=') << std::endl
+              << std::endl;
 
     return frame;
 }

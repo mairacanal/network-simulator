@@ -1,8 +1,7 @@
 #pragma once
 
 class Layer {
-    public:
-
+public:
     template <typename A>
     static void receive(A value) = delete;
 

@@ -7,15 +7,15 @@ void Application::send(const std::string& msg)
     std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Aplicação") << std::endl;
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Convertendo para bits:" << std::endl;
 
-    for (auto character : msg)
-    {
-        std::bitset<8> bits (character);
+    for (auto character : msg) {
+        std::bitset<8> bits(character);
         for (auto bit : bits.to_string())
             frame.push_back(bit == '1');
     }
 
     PrintService::printAsBytes(frame);
-    std::cout << std::string (120 , '=') << std::endl << std::endl;
+    std::cout << std::string(120, '=') << std::endl
+              << std::endl;
 
     DataLink::send(frame);
 }
