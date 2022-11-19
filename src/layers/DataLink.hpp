@@ -8,6 +8,8 @@
 #include "../utils/ColoredString.hpp"
 #include "../utils/PrintService.hpp"
 
+#define HANDLING_ROUTINE 2
+
 class DataLink:public Layer{
     public:
         static void send(std::vector<bool> frame);

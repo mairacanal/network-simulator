@@ -22,7 +22,7 @@ bool DataCheck::evenTest(std::vector<bool> frame){
         even = even ^ bit;
     }
 
-    return !even
+    return !even;
 }
 
 bool DataCheck::evenParityTest(std::vector<bool>& frame){
@@ -57,7 +57,7 @@ bool DataCheck::crc32Test(std::vector<bool>& frame){
         remaining[i] = frame[i];
     }
 
-    std::cout << ColoredString::cyan("[INFO]") "Frame e resto:" << std::endl;
+    std::cout << ColoredString::cyan("[INFO]") + "Frame e resto:" << std::endl;
     PrintService::printAsBytes(remaining);
 
     bool hasError = false;
