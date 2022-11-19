@@ -31,8 +31,8 @@ Em seguida, para executar o simulador basta rodar:
 $ make run
 ```
 Há diversas formas de conferir a integridade da transmissão. Cada modelo pode ser selecionado alterando o paramêtro **_HANDLING_ROUTINE_** no arquivo **Datacheck.hpp**. Neste, o valor desta variável implica na seguinte equivalência:
-1. Controle por Paridade par
-2. Controle por Paridade Impar 
-3. Controle por Crc32Control
+0. Controle por Paridade par
+1. Controle por Paridade Impar 
+2. Controle por Crc32Control
 
 A saída da aplicação pode ser realizada simplesmente ao digitar "exit" no terminal.
