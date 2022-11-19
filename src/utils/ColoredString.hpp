@@ -3,11 +3,9 @@
 #include <string>
 
 
-/*
-INPUT & OUTPUT: BLUE
-INFO: CYAN
-LAYER: MAGENTA
-
+/**
+ * @brief Esstiliza o texto recebido de maneira a deixa-lo colorido no terminal, a depender do método invocado tem-se uma cor diferente.
+ * @param str String a ser recebida para estilização
 */
 class ColoredString {
 

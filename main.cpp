@@ -3,6 +3,5 @@
 int main()
 {   
     Handler::input();
-
     return 0;
 }

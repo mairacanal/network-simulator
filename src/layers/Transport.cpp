@@ -23,8 +23,8 @@ std::vector<bool> _disturbMessageWithRandonmess(std::vector<bool> &message)
 void Transport::send(std::vector<bool> message)
 {
     std::cout << std::endl;
-    std::cout << ColoredString::magenta("[LAYER] ") << "Camada do meio de comunicação:" << std::endl;
-    std::cout << ColoredString::blue("[INFO] ") << "Binário enviado: " << std::endl;
+    std::cout << ColoredString::magenta("[LAYER]\t\t\t\t\t ") << "Camada do meio de comunicação:" << std::endl;
+    std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Binário enviado: " << std::endl;
 
     // Mostra os bits que foram enviados
     PrintService::printAsStream(message);
@@ -32,14 +32,14 @@ void Transport::send(std::vector<bool> message)
     // Perturba a mensagem
     std::vector<bool> finalMessage = _disturbMessageWithRandonmess(message);
 
-    std::cout << ColoredString::blue("[INFO] ") << "Recebimento: " << std::endl;
-    std::cout << ColoredString::blue("[INFO] ") << "Binário recebido: " << std::endl;
+    std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Recebimento: " << std::endl;
+    std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Binário recebido: " << std::endl;
 
     // Mensagem recebida com erros
     PrintService::printAsStream(finalMessage);
 
     // Mostra a diferença 
-    std::cout << ColoredString::blue("[INFO] ") << "Diferenças: " << std::endl;
+    std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Diferenças: " << std::endl;
 
     PrintService::printDifference(message, finalMessage);
 
