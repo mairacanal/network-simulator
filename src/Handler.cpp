@@ -25,6 +25,6 @@ void Handler::input()
 }
 
 void Handler::output(const std::string& msg)
-{
-    std::cout << ColoredString::blue("[OUTPUT] ") << "Mensagem Recebida: \t\t\t\t\t" << msg << std::endl;
+{   std::cout << std::string (120, '=') << std::endl << std::endl;
+    std::cout << ColoredString::blue("[OUTPUT] ") << "Mensagem Recebida: \t\t\t\t\t" << msg << std::endl << std::endl;
 }

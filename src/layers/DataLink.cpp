@@ -62,7 +62,7 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
         1, 0, 0, 0, 1, 1, 1, 0,
         1, 1, 0, 1, 1, 0, 1, 1,
         1
-    };i
+    };
 
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Polinômio: ";
 
