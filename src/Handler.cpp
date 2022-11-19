@@ -9,7 +9,7 @@ void Handler::input()
         std::getline(std::cin, msg);
 
         if (msg == "exit") {
-            std::cout <<  ColoredString::blue("[INPUT] ") << ColoredString::green("O terminal será finalizado...") << std::endl;
+            std::cout << ColoredString::green("[EXIT] O terminal será finalizado...") << std::endl;
             break;
         }
 
