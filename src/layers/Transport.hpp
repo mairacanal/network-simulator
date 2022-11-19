@@ -1,16 +1,18 @@
 #pragma once
-#include <vector>
+
 #include <iostream>
+#include <vector>
 
-#include "Layer.hpp"
 #include "DataLink.hpp"
-
+#include "Layer.hpp"
 #include "../utils/ColoredString.hpp"
 #include "../utils/PrintService.hpp"
 
-#define ERROR_PROB 10
-class Transport : public Layer
-{
+class Transport : public Layer {
+private:
+    static constexpr int ERROR_PROB = 10;
+    static std::vector<bool> _disturbMessageWithRandonmess(const std::vector<bool>& message);
+
 public:
     static void send(std::vector<bool> message);
 };

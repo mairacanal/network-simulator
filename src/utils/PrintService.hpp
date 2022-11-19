@@ -114,6 +114,10 @@ public:
         _sendNewLine();
     }
 
+
+    /**
+     * @brief Mostra de maneira estilizada o texto de TCP Simulator
+    */
     static void welcomeScreen()
     {
         char const *linew = "______________________________________________________________________________________________________\n";
