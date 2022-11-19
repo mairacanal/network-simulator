@@ -4,8 +4,8 @@ void Application::send(const std::string& msg)
 {
     std::vector<bool> frame {};
 
-    std::cout << ColoredString::magenta("[LAYER] \t\t\t\t\tCamada de Aplicação") << std::endl;
-    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t\t") << "Convertendo para bits:" << std::endl;
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Aplicação") << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Convertendo para bits:" << std::endl;
 
     for (auto character : msg)
     {
@@ -27,7 +27,7 @@ void Application::receive(const std::vector<bool>& bits)
     unsigned long character;
     int i = 0;
 
-    std::cout << ColoredString::magenta("[LAYER] \t\t\t\t\tCamada de Aplicação") << std::endl;
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Aplicação") << std::endl;
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Convertendo para ASCII: ";
 
     for (auto b : bits) {

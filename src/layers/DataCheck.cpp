@@ -75,5 +75,7 @@ bool DataCheck::crc32Test(std::vector<bool>& frame)
         remaining.erase(remaining.end());
     }
 
+     
+
     return hasError;
 }

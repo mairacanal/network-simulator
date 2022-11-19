@@ -26,7 +26,7 @@ void Transport::send(std::vector<bool> message)
     std::vector<bool> finalMessage {};
 
     std::cout << std::endl;
-    std::cout << ColoredString::magenta("[LAYER] \t\t\t\t\tCamada Física de Transmissão") << std::endl;
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada Física de Transmissão") << std::endl;
     std::cout << ColoredString::blue("[INFO] ") << "Binário enviado: " << std::endl;
 
     // Mostra os bits que foram enviados
@@ -45,4 +45,7 @@ void Transport::send(std::vector<bool> message)
     PrintService::printDifference(message, finalMessage);
 
     DataLink::receive(finalMessage);
+     std::cout << std::string (message.size() + 50, '=') << std::endl << std::endl;
+
+
 }

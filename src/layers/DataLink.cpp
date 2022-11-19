@@ -2,37 +2,42 @@
 #include "DataCheck.hpp"
 
 void DataLink::send(std::vector<bool> frame)
-{
-    std::cout << ColoredString::magenta("[LAYER] Camada de Enlace") << std::endl;
+{   
+    std::cout << ColoredString::magenta("[LAYER]\t\t\t\t\tCamada de Enlace") << std::endl;
     frame = errorHandling(frame);
     Transport::send(frame);
 }
 
 void DataLink::receive(std::vector<bool> frame)
-{
-    std::cout << ColoredString::magenta("[LAYER] Camada de Enlace") << std::endl;
+{   
+    std::cout << std::string (90, '=') << std::endl << std::endl;
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada de Enlace") << std::endl;
 
     if (DataCheck::errorTest(frame))
-        std::cout << ColoredString::red("[ERROR] Erro nos dados recebidos") << std::endl;
+        std::cout << ColoredString::red("[ERROR]\t\t\t\t\tErro nos dados recebidos") << std::endl;
 
-    std::cout << ColoredString::cyan("[INFO] ") + "Binário recebido:" << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Binário recebido:" << std::endl;
+
+    
     PrintService::printAsBytes(frame);
 
+    std::cout << std::endl<< std::string (120, '=') << std::endl << std::endl;
     Application::receive(frame);
+
 }
 
 std::vector<bool> DataLink::errorHandling(std::vector<bool> frame)
 {
-    std::cout << ColoredString::cyan("[INFO] ") + "Iniciando tratamento de inconsistencias" << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Iniciando tratamento de inconsistencias" << std::endl;
     switch (HANDLING_ROUTINE) {
     case 0:
-        std::cout << ColoredString::cyan("[INFO] ") + "Com paridade par" << std::endl;
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade par" << std::endl;
         return evenParityControl(frame);
     case 1:
-        std::cout << ColoredString::cyan("[INFO]") + "Com paridade impar" << std::endl;
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade impar" << std::endl;
         return oddParityControl(frame);
     default:
-        std::cout << ColoredString::cyan("[INFO] ") + "Utilizando polinomios" << std::endl;
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Utilizando polinomios" << std::endl;
         return crc32Control(frame);
     }
 }
@@ -60,8 +65,9 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
         1
     };
 
-    std::cout << ColoredString::cyan("[INFO] ") + "Polinômio:" << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Polinômio:" << std::endl;
     std::cout << std::endl;
+
 
     for (int i = 0; i < polinomio.size(); i++) {
         if (polinomio[i]) {
@@ -72,8 +78,8 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
         }
     }
 
+    
     std::cout << std::endl;
-
     std::vector<bool> remaining = frame;
     remaining.resize(remaining.size() + 32);
     for (int i = 0; i < remaining.size() - 32; i++) {
@@ -87,10 +93,10 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
 
     frame = remaining;
 
-    std::cout << ColoredString::cyan("[INFO] ") + "Frame e resto:" << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Frame e resto:" << std::endl;
     std::cout << std::endl;
     PrintService::printAsBytes(frame);
-
+    std::cout << std::endl<< std::string (120, '=') << std::endl << std::endl;
     return frame;
 }
 
