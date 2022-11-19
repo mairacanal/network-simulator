@@ -4,8 +4,8 @@ void Application::send(const std::string& msg)
 {
     std::vector<bool> frame {};
 
-    std::cout << ColoredString::magenta("[LAYER] Camada de Aplicação") << std::endl;
-    std::cout << ColoredString::cyan("[INFO] ") << "Convertendo para bits:" << std::endl;
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\t\tCamada de Aplicação") << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t\t") << "Convertendo para bits:" << std::endl;
 
     for (auto character : msg)
     {
@@ -15,6 +15,7 @@ void Application::send(const std::string& msg)
     }
 
     PrintService::printAsBytes(frame);
+    std::cout << std::endl << std::string (msg.length() + 90 , '=') << std::endl << std::endl;
 }
 
 void Application::receive(const std::vector<bool>& bits)
@@ -24,8 +25,8 @@ void Application::receive(const std::vector<bool>& bits)
     unsigned long character;
     int i = 0;
 
-    std::cout << ColoredString::magenta("[LAYER] Camada de Aplicação") << std::endl;
-    std::cout << ColoredString::cyan("[INFO] ") << "Convertendo para ASCII: ";
+    std::cout << ColoredString::magenta("[LAYER] \t\t\t\t\tCamada de Aplicação") << std::endl;
+    std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") << "Convertendo para ASCII: ";
 
     for (auto b : bits) {
         bytes[7 - i++ % 8] = b;
