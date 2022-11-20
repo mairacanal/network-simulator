@@ -31,10 +31,10 @@ std::vector<bool> DataLink::errorHandling(std::vector<bool> frame)
 
     switch (HANDLING_ROUTINE) {
     case 0:
-        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade par" << std::endl;
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade par" << std::endl << std::endl;
         return evenParityControl(frame);
     case 1:
-        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade impar" << std::endl;
+        std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Com paridade impar" << std::endl << std::endl;
         return oddParityControl(frame);
     default:
         std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Utilizando polinomios" << std::endl;
@@ -94,8 +94,6 @@ std::vector<bool> DataLink::crc32Control(std::vector<bool> frame)
 
     std::cout << ColoredString::cyan("[INFO] \t\t\t\t\t") + "Frame e resto:" << std::endl;
     PrintService::printAsBytes(frame);
-    std::cout << std::string(120, '=') << std::endl
-              << std::endl;
 
     return frame;
 }

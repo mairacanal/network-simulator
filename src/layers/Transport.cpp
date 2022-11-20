@@ -14,6 +14,9 @@ void Transport::send(const std::vector<bool>& message)
 {
     std::vector<bool> finalMessage {};
 
+    std::cout << std::string(120, '=') << std::endl
+              << std::endl;
+
     std::cout << ColoredString::magenta("[LAYER] \t\t\t\tCamada Física de Transmissão") << std::endl;
     std::cout << ColoredString::blue("[INFO] ") << "\t\t\t\t\tBinário enviado: " << std::endl;
 
