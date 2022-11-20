@@ -8,6 +8,10 @@
 - Maíra de Souza Canal - 11819403
 - João Augusto Fernandes Barbosa - 11953348
 
+## Link da apresentação
+
+[LINK](https://drive.google.com/file/d/16XA0VJL5xvOLCUog5SFhmIp658y5rjjb/view?usp=share_link)
+
 ## Sobre o Trabalho
 - **Versões do sistema operacional testadas:** Ubuntu 22.04, Fedora 36
 - **Compiladores:** g++ 11 e 12
