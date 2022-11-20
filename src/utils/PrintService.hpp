@@ -53,34 +53,6 @@ public:
     }
 
     /**
-     * @brief Imprime um vetor de bits como uma stream
-     * @param bits vector de bits a ser printado
-     */
-    static void printAsStream(const std::vector<bool>& bits)
-    {
-        int i = 1, j = 1;
-
-        _sendNewLine();
-
-        for (auto bit : bits) {
-            std::cout << bit;
-
-            // Um espaco a cada 8 bits
-            _compareNBits(j, 8);
-            if (j == 1)
-                _sendSpace();
-
-            // Uma nova linha a cada 32 bits
-            _compareNBits(i, 32);
-            if (i == 1)
-                _sendNewLine();
-        }
-
-        _sendNewLine();
-        _sendNewLine();
-    }
-
-    /**
      * @brief Compara dois vetores de bits e imprime o caractere em vermelho quando os dois forem diferentes.
      * @param og vector de bits original
      * @param comp vector de bits a ser comparado

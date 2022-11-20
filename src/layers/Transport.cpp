@@ -18,14 +18,14 @@ void Transport::send(const std::vector<bool>& message)
     std::cout << ColoredString::blue("[INFO] ") << "\t\t\t\t\tBinário enviado: " << std::endl;
 
     // Mostra os bits que foram enviados
-    PrintService::printAsStream(message);
+    PrintService::printAsBytes(message);
 
     finalMessage = _disturbMessageWithRandonmess(message);
 
     std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Binário recebido: " << std::endl;
 
     // Mensagem recebida com erros
-    PrintService::printAsStream(finalMessage);
+    PrintService::printAsBytes(finalMessage);
 
     // Mostra a diferença
     std::cout << ColoredString::blue("[INFO] \t\t\t\t\t") << "Diferenças: " << std::endl;
